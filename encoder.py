@@ -9,6 +9,15 @@ def encode_password():
         encoded_password += str(shifted_digit)
     print('Your password has been encoded and stored!')
 
+def decode():
+	decoded_password = ''
+	global encoded_password
+	for digit in encoded_password:
+		new_digit = int(digit) - 3
+		decoded_password += str(new_digit)
+	return decoded_password
+	
+
 def main_menu():
     choice = None
     while choice != 3:
@@ -22,7 +31,8 @@ def main_menu():
             encode_password()
         elif choice == 2:
             #Nico's decoding function
-            pass
+            new_pword = decode()
+            print(f'The encoded password is {encoded_password}, and the original password is {new_pword}.')
         elif choice == 3:
             print('Exiting...')
             break
